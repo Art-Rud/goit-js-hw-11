@@ -51,7 +51,17 @@ const formSubbmit = event => {
       });
       modal.refresh();
     })
-    .catch(err => console.log(err))
+    .catch(err =>
+      iziToast.error({
+        message: 'Something wrong',
+        messageColor: '#fafafb',
+        icon: 'fas fa-exclamation-triangle',
+        iconColor: '#fafafb',
+        position: 'topRight',
+        backgroundColor: '#ef4040',
+        color: '#fafafb',
+      })
+    )
     .finally(() => {
       loader.style.display = 'none';
     });
